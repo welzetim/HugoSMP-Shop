@@ -1,155 +1,543 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <!-- SEO -->
-  <title>HugoSMP Geld kaufen | HugoSMP Market</title>
-  <meta name="description" content="HugoSMP Geld kaufen - schneller Discord Market, faire Preise und direkter Support. Jetzt einfach beitreten und handeln.">
-  <meta name="keywords" content="hugosmp geld kaufen, minecraft geld kaufen, hugosmp market, minecraft money kaufen">
+  <title>HugoSMP Market | HugoSMP Shop</title>
+  <meta name="description" content="HugoSMP Market mit Preisen, Items, Reviews und direktem Discord-Zugang." />
+  <meta name="keywords" content="HugoSMP Shop, HugoSMP Market, HugoSMP Geld kaufen, HugoSMP Preise, HugoSMP Reviews, HugoSMP Discord" />
+  <meta name="theme-color" content="#8b5cf6" />
 
   <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-GK6TJP0CKJ"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-GK6TJP0CKJ');
-</script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-GK6TJP0CKJ"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-GK6TJP0CKJ');
+  </script>
 
   <style>
-    body {
+    * {
       margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
       font-family: Arial, sans-serif;
-      color: white;
-      background: linear-gradient(135deg, #2a004f, #6a008a, #000000);
+      color: #fff;
+      background:
+        radial-gradient(circle at top left, rgba(168, 85, 247, 0.18), transparent 30%),
+        radial-gradient(circle at top right, rgba(236, 72, 153, 0.15), transparent 25%),
+        linear-gradient(135deg, #07070d 0%, #12081d 45%, #040406 100%);
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .wrapper {
+      width: 100%;
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 999;
+      backdrop-filter: blur(12px);
+      background: rgba(10, 8, 18, 0.75);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .nav {
       display: flex;
+      justify-content: space-between;
       align-items: center;
-      justify-content: center;
-      height: 100vh;
-      text-align: center;
+      padding: 18px 0;
+      gap: 20px;
     }
 
-    .container {
-      max-width: 600px;
-      padding: 20px;
+    .logo {
+      font-size: 1.2rem;
+      font-weight: 900;
+      letter-spacing: 0.5px;
+      background: linear-gradient(90deg, #ff4ecb, #a855f7, #6ea8ff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
 
-    .title-box {
-      background: linear-gradient(135deg, #ff4ecb, #8a2be2);
-      color: black;
-      padding: 12px 20px;
-      border-radius: 12px;
-      font-weight: bold;
+    .nav-links {
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+      color: #d4d4d8;
+      font-size: 0.95rem;
+    }
+
+    .nav-links a:hover {
+      color: #fff;
+    }
+
+    .hero {
+      padding: 80px 0 50px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 24px;
+      align-items: center;
+    }
+
+    .badge {
       display: inline-block;
-      margin-bottom: 20px;
-      box-shadow: 0 0 20px rgba(255, 78, 203, 0.4);
+      margin-bottom: 18px;
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+      color: #eadcff;
+      font-size: 0.9rem;
     }
 
     h1 {
-      font-size: 32px;
-      margin: 10px 0;
+      font-size: clamp(2.4rem, 5vw, 4.3rem);
+      line-height: 1.05;
+      font-weight: 900;
+      margin-bottom: 16px;
     }
 
-    .highlight {
-      color: #ff4ecb;
+    .gradient {
+      background: linear-gradient(90deg, #ff4ecb, #a855f7, #6ea8ff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
 
-    p {
-      color: #ccc;
-      margin-top: 15px;
-      line-height: 1.5;
+    .hero p {
+      color: #cfd1d8;
+      font-size: 1.02rem;
+      line-height: 1.7;
+      max-width: 680px;
+      margin-bottom: 12px;
     }
 
-    .features {
+    .hero-buttons {
       display: flex;
-      gap: 10px;
-      margin-top: 25px;
+      gap: 14px;
       flex-wrap: wrap;
-      justify-content: center;
+      margin-top: 24px;
     }
 
-    .feature {
+    .btn {
+      display: inline-block;
+      padding: 14px 22px;
+      border-radius: 14px;
+      font-weight: 800;
+      transition: 0.2s ease;
+    }
+
+    .btn-primary {
+      background: linear-gradient(90deg, #ff4ecb, #8b5cf6);
+      color: #080808;
+      box-shadow: 0 0 24px rgba(168, 85, 247, 0.35);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px) scale(1.02);
+      filter: brightness(1.08);
+    }
+
+    .btn-secondary {
       background: rgba(255,255,255,0.05);
       border: 1px solid rgba(255,255,255,0.1);
-      padding: 12px;
-      border-radius: 10px;
-      width: 150px;
+      color: #fff;
     }
 
-    .feature b {
-      color: #ff4ecb;
+    .btn-secondary:hover {
+      background: rgba(255,255,255,0.08);
+      transform: translateY(-2px);
     }
 
-    .button {
-      display: inline-block;
-      margin-top: 30px;
-      padding: 15px 25px;
-      background: linear-gradient(90deg, #ff4ecb, #8a2be2);
-      color: black;
-      font-weight: bold;
-      text-decoration: none;
-      border-radius: 12px;
-      transition: 0.2s;
-      box-shadow: 0 0 15px rgba(255, 78, 203, 0.5);
+    .hero-card,
+    .card {
+      background: linear-gradient(180deg, rgba(255,255,255,0.055), rgba(255,255,255,0.025));
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 24px;
+      box-shadow: 0 16px 32px rgba(0,0,0,0.22);
     }
 
-    .button:hover {
-      transform: scale(1.08);
-      filter: brightness(1.2);
+    .hero-card {
+      padding: 24px;
     }
 
-    .footer {
-      margin-top: 20px;
-      font-size: 12px;
-      color: #777;
+    .hero-card h2 {
+      font-size: 1.8rem;
+      margin-bottom: 12px;
+    }
+
+    .hero-card p {
+      color: #cfd1d8;
+      margin-bottom: 16px;
+    }
+
+    .quick-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+
+    .quick-box {
+      padding: 16px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.07);
+    }
+
+    .quick-box h3 {
+      font-size: 1.15rem;
+      margin-bottom: 6px;
+    }
+
+    .quick-box p {
+      margin: 0;
+      font-size: 0.95rem;
+      color: #bfc2cb;
+    }
+
+    section {
+      padding: 22px 0 42px;
+    }
+
+    .section-title {
+      font-size: 2rem;
+      font-weight: 900;
+      margin-bottom: 18px;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+    }
+
+    .card {
+      padding: 22px;
+    }
+
+    .card h3 {
+      font-size: 1.2rem;
+      margin-bottom: 14px;
+    }
+
+    .price-list {
+      list-style: none;
+    }
+
+    .price-list li {
+      padding: 12px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      color: #ebecf0;
+    }
+
+    .price-list li:last-child {
+      border-bottom: none;
+    }
+
+    .price-highlight {
+      color: #f3b0df;
+      font-weight: 800;
+    }
+
+    .reviews-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+    }
+
+    .review-card {
+      padding: 20px;
+      border-radius: 22px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.055), rgba(255,255,255,0.025));
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .stars {
+      color: #fbbf24;
+      font-size: 1.05rem;
+      margin-bottom: 10px;
+    }
+
+    .review-card h3 {
+      font-size: 1.08rem;
+      margin-bottom: 8px;
+    }
+
+    .review-card p {
+      color: #d0d2da;
+      line-height: 1.6;
+    }
+
+    .review-date {
+      margin-top: 12px;
+      font-size: 0.9rem;
+      color: #a9adb8;
+    }
+
+    .cta {
+      margin-top: 8px;
+      text-align: center;
+      padding: 32px 22px;
+      border-radius: 24px;
+      background: linear-gradient(135deg, rgba(255,78,203,0.12), rgba(96,165,250,0.08));
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .cta h2 {
+      font-size: 2rem;
+      margin-bottom: 10px;
+    }
+
+    .cta p {
+      color: #cfd1d8;
+      margin-bottom: 20px;
+    }
+
+    footer {
+      margin-top: 24px;
+      padding: 26px 0 34px;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      color: #a3a6b1;
+      font-size: 0.95rem;
+    }
+
+    .footer-grid {
+      display: flex;
+      justify-content: space-between;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+
+    .hidden-seo {
+      display: none;
+    }
+
+    @media (max-width: 940px) {
+      .hero-grid,
+      .grid-2,
+      .reviews-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .nav {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .hero {
+        padding-top: 60px;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .quick-grid {
+        grid-template-columns: 1fr;
+      }
+
+      h1 {
+        font-size: 2.4rem;
+      }
+
+      .section-title,
+      .cta h2,
+      .hero-card h2 {
+        font-size: 1.6rem;
+      }
+
+      .btn {
+        width: 100%;
+        text-align: center;
+      }
     }
   </style>
 </head>
-
 <body>
-  <div class="container">
-    <div class="title-box">HUGOSMP MARKET</div>
 
-    <h1>
-      HugoSMP <span class="highlight">Geld kaufen</span>
-    </h1>
+  <header>
+    <div class="wrapper nav">
+      <div class="logo">HUGOSMP MARKET</div>
+      <nav class="nav-links">
+        <a href="#preise">Preise</a>
+        <a href="#reviews">Reviews</a>
+        <a href="#shop">Discord</a>
+      </nav>
+    </div>
+  </header>
 
-    <p>
-      Schnelle Lieferung, faire Deals und direkter Support über Discord. 
-      Kaufe jetzt HugoSMP Geld einfach und unkompliziert.
-    </p>
+  <main>
+    <section class="hero">
+      <div class="wrapper hero-grid">
+        <div>
+          <div class="badge">HugoSMP Shop • HugoSMP Market • Discord Shop</div>
 
-    <p>
-      HugoSMP Geld kaufen war noch nie so einfach – direkt über Discord mit schnellem Support und fairen Preisen.
-    </p>
+          <h1>
+            <span class="gradient">HugoSMP Shop</span><br>
+            schnell & direkt
+          </h1>
 
-    <div class="features">
-      <div class="feature">
-        <b>Schnell</b>
-        <p>Direkter Support</p>
+          <p>
+            Faire Preise, starke Deals und direkter Zugang über Discord.
+          </p>
+
+          <p>
+            Geld, Items und Reviews auf einen Blick.
+          </p>
+
+          <div class="hero-buttons">
+            <a href="https://discord.gg/meQda4y6u" target="_blank" class="btn btn-primary">Zum Discord Shop</a>
+            <a href="#preise" class="btn btn-secondary">Preise</a>
+          </div>
+        </div>
+
+        <div class="hero-card">
+          <h2>Alles auf einen Blick</h2>
+          <p>Übersichtlich, schnell und ohne unnötigen Text.</p>
+
+          <div class="quick-grid">
+            <div class="quick-box">
+              <h3>Geldpakete</h3>
+              <p>Direkt verfügbar</p>
+            </div>
+            <div class="quick-box">
+              <h3>Items</h3>
+              <p>Klar gelistet</p>
+            </div>
+            <div class="quick-box">
+              <h3>Reviews</h3>
+              <p>5★ Bewertungen</p>
+            </div>
+            <div class="quick-box">
+              <h3>Discord</h3>
+              <p>Schneller Zugang</p>
+            </div>
+          </div>
+        </div>
       </div>
+    </section>
 
-      <div class="feature">
-        <b>Fair</b>
-        <p>Gute Preise</p>
+    <section id="preise">
+      <div class="wrapper">
+        <h2 class="section-title">Preise</h2>
+
+        <div class="grid-2">
+          <div class="card">
+            <h3>Ingame Geld</h3>
+            <ul class="price-list">
+              <li><span class="price-highlight">1.000.000$</span> → 4€</li>
+              <li><span class="price-highlight">5.000.000$</span> → 20€</li>
+              <li><span class="price-highlight">10.000.000$</span> → 40€</li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <h3>Item Sets</h3>
+            <ul class="price-list">
+              <li><span class="price-highlight">Netherite PvP Set</span> → 4,00€</li>
+              <li><span class="price-highlight">Diamond PvP Kit</span> → 1,00€</li>
+              <li><span class="price-highlight">Crystal</span> → 1,00€ pro Stück</li>
+              <li><span class="price-highlight">Mace</span> → 1,50€ pro Stück</li>
+            </ul>
+          </div>
+        </div>
       </div>
+    </section>
 
-      <div class="feature">
-        <b>Aktiv</b>
-        <p>Community & Deals</p>
+    <section id="reviews">
+      <div class="wrapper">
+        <h2 class="section-title">Reviews</h2>
+
+        <div class="reviews-grid">
+          <div class="review-card">
+            <div class="stars">★★★★★ (5/5)</div>
+            <h3>„nur zu empfehlen“</h3>
+            <p>nur zu empfehlen sind trust und machen gute preise nur zu empfehlen nette anbieter</p>
+            <div class="review-date">05.04.2026 • 23:14</div>
+          </div>
+
+          <div class="review-card">
+            <div class="stars">★★★★★ (5/5)</div>
+            <h3>„super danke euch“</h3>
+            <p>super danke euch</p>
+            <div class="review-date">06.04.2026 • 16:24</div>
+          </div>
+
+          <div class="review-card">
+            <div class="stars">★★★★★ (5/5)</div>
+            <h3>„Bester Service“</h3>
+            <p>Bester Service für ganz HugoSMP</p>
+            <div class="review-date">06.04.2026 • 19:46</div>
+          </div>
+
+          <div class="review-card">
+            <div class="stars">★★★★★ (5/5)</div>
+            <h3>„ging wirklich schnell“</h3>
+            <p>Angebot ging wirklich schnell</p>
+            <div class="review-date">03.04.2026 • 14:36</div>
+          </div>
+
+          <div class="review-card">
+            <div class="stars">★★★★★ (5/5)</div>
+            <h3>„mal wieder ging super“</h3>
+            <p>mal wieder ging super</p>
+            <div class="review-date">04.04.2026 • 00:06</div>
+          </div>
+
+          <div class="review-card">
+            <div class="stars">★★★★★ (5/5)</div>
+            <h3>„kein scam“</h3>
+            <p>habe mal einen test kauf gemacht um zu testen ob es scam ist und es ist kein scam ❤️</p>
+            <div class="review-date">04.04.2026 • 18:11</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="shop">
+      <div class="wrapper">
+        <div class="cta">
+          <h2>Jetzt beitreten</h2>
+          <p>Direkt zum Discord und schnell starten.</p>
+          <a href="https://discord.gg/meQda4y6u" target="_blank" class="btn btn-primary">HugoSMP Market öffnen</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrapper footer-grid">
+      <div>
+        <strong>HUGOSMP MARKET</strong><br>
+        Discord Shop
+      </div>
+      <div>
+        Kein offizieller HugoSMP Server<br>
+        Handel auf eigenes Risiko
       </div>
     </div>
+  </footer>
 
-    <a href="https://discord.gg/meQda4y6u" target="_blank" class="button">
-      Zum Shop
-    </a>
-
-    <div class="footer">
-      Kein offizieller HugoSMP Server • Handel auf eigenes Risiko
-    </div>
+  <div class="hidden-seo">
+    HugoSMP Shop, HugoSMP Market, HugoSMP Geld kaufen, HugoSMP Preise, HugoSMP Reviews, HugoSMP Discord
   </div>
+
 </body>
 </html>
