@@ -1300,6 +1300,19 @@
         return;
       }
 
+      if (method === 'Amazon Gutschein') {
+        checkoutInstructions.innerHTML = `
+          <div><strong>1.</strong> Öffne direkt ein Ticket auf unserem Discord Server.</div>
+          <div class="payment-box">
+            <strong>Amazon Gutschein</strong>
+            <div class="warning-box">⚠️ Bei Amazon Gutscheinen werden aufgrund von Transaktionsgebühren nur 75% angerechnet.</div>
+          </div>
+          <div><strong>2.</strong> Schreibe in das Ticket, was du kaufen möchtest.</div>
+          <div><strong>3.</strong> Sende den Gutscheincode und ein Bild vom Gutschein im Ticket.</div>
+        `;
+        return;
+      }
+
       checkoutInstructions.innerHTML = `
         <div><strong>1.</strong> Öffne direkt ein Ticket auf unserem Discord Server.</div>
         <div><strong>2.</strong> Schreibe in das Ticket, was du kaufen möchtest.</div>
