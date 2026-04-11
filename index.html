@@ -693,41 +693,70 @@
 
     .offer-banner {
       margin-top: 18px;
-      padding: 16px 18px;
+      padding: 18px 20px;
       border-radius: 18px;
-      background: linear-gradient(135deg, rgba(67,240,143,0.12), rgba(74,213,255,0.08));
-      border: 1px solid rgba(67,240,143,0.18);
-      display: none;
+      background: linear-gradient(135deg, rgba(255, 215, 106, 0.22), rgba(255, 108, 108, 0.16));
+      border: 1px solid rgba(255, 215, 106, 0.45);
+      display: block;
+      text-align: center;
+      font-weight: 900;
+      font-size: 18px;
+      color: #ffd76a;
+      letter-spacing: 0.5px;
+      box-shadow: 0 0 0 rgba(255, 215, 106, 0.0), 0 0 30px rgba(255, 108, 108, 0.16);
+      animation: saleGlow 2s ease-in-out infinite alternate;
     }
 
-    .offer-banner.active {
+    .offer-banner .sale-line {
       display: block;
+      font-size: 22px;
+      color: #fff3bf;
+      text-shadow: 0 0 10px rgba(255, 215, 106, 0.45), 0 0 24px rgba(255, 108, 108, 0.28);
     }
 
-    .offer-banner strong {
+    .offer-banner .countdown-line {
       display: block;
-      margin-bottom: 6px;
-      color: white;
+      margin-top: 8px;
+      font-size: 14px;
+      font-weight: 800;
+      color: #ffe8a3;
+      letter-spacing: 1px;
+    }
+
+    @keyframes saleGlow {
+      from {
+        box-shadow: 0 0 12px rgba(255, 215, 106, 0.18), 0 0 24px rgba(255, 108, 108, 0.12);
+        transform: translateY(0);
+      }
+      to {
+        box-shadow: 0 0 22px rgba(255, 215, 106, 0.32), 0 0 42px rgba(255, 108, 108, 0.22);
+        transform: translateY(-1px);
+      }
+    }
+
+    .old-price {
+      text-decoration: line-through;
+      color: #a8b7c9;
       font-size: 16px;
+      margin-right: 8px;
     }
 
-    
-    .admin-panel h3 {
-      margin: 0 0 10px;
-      font-size: 20px;
+    .new-price {
+      color: #43f08f;
+      font-weight: 900;
     }
 
-    .admin-panel-grid {
-      display: grid;
-      gap: 12px;
-      margin-top: 14px;
-    }
-
-    .admin-panel-actions {
-      display: flex;
-      gap: 10px;
-      flex-wrap: wrap;
-      margin-top: 14px;
+    .sale-badge {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      background: linear-gradient(135deg, #ffd76a, #ff6c6c);
+      color: #000;
+      font-weight: 900;
+      padding: 6px 10px;
+      border-radius: 999px;
+      font-size: 11px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.3);
     }
 
     @media (max-width: 1120px) {
@@ -788,8 +817,8 @@
           <p>HugoSMP Market für Spieler, die einen edlen, schnellen und übersichtlichen HugoSMP Shop suchen. Auf der Seite findest du Preise, Items, Zahlungsmethoden, Reviews, laufende Giveaways und eine klare Schritt-für-Schritt-Anleitung für den Kauf.</p>
 
           <div class="offer-banner" id="offerBanner">
-            <strong id="offerBannerTitle">Aktuelles Angebot</strong>
-            <span id="offerBannerText">Aktuelle Angebote, Rabatte und Giveaways findest du auf unserem Discord Server.</span>
+            <span class="sale-line">🔥 25% WEBSITE OPENING SALE – ALLES REDUZIERT 🔥</span>
+            <span class="countdown-line">ENDET 12.04.2026 UM 20:00 UHR</span>
           </div>
 
           <div class="warning-box" style="margin-bottom:14px;font-weight:700;">
@@ -852,7 +881,7 @@
               <h3>1.000.000$</h3>
               <div class="desc">Schneller Standardbetrag für kleinere Einkäufe im HugoSMP Shop.</div>
               <div class="product-meta"><span>Produkt</span><span>HugoSMP Market</span></div>
-              <div class="price">2,00€</div>
+              <div class="price"></div>
               <div class="controls">
                 <input class="qty" type="number" min="1" value="1" />
                 <button class="btn btn-primary add-btn">In Warenkorb</button>
@@ -864,7 +893,7 @@
               <h3>5.000.000$</h3>
               <div class="desc">Größeres Paket für Spieler, die direkt mehr im HugoSMP Market holen wollen.</div>
               <div class="product-meta"><span>Produkt</span><span>HugoSMP Shop</span></div>
-              <div class="price">10,00€</div>
+              <div class="price"></div>
               <div class="controls">
                 <input class="qty" type="number" min="1" value="1" />
                 <button class="btn btn-primary add-btn">In Warenkorb</button>
@@ -876,7 +905,7 @@
               <h3>10.000.000$</h3>
               <div class="desc">Großes Paket für Leute, die im HugoSMP Shop direkt höher einsteigen wollen.</div>
               <div class="product-meta"><span>Produkt</span><span>HugoSMP Geld kaufen</span></div>
-              <div class="price">20,00€</div>
+              <div class="price"></div>
               <div class="controls">
                 <input class="qty" type="number" min="1" value="1" />
                 <button class="btn btn-primary add-btn">In Warenkorb</button>
@@ -888,7 +917,7 @@
               <h3>Netherite PvP Set</h3>
               <div class="desc">Netherite Armour (Enchanted). Für starke PvP-Starts und direkte Action.</div>
               <div class="product-meta"><span>Item</span><span>Set</span></div>
-              <div class="price">2,00€</div>
+              <div class="price"></div>
               <div class="controls">
                 <input class="qty" type="number" min="1" value="1" />
                 <button class="btn btn-primary add-btn">In Warenkorb</button>
@@ -900,7 +929,7 @@
               <h3>Diamond PvP Kit</h3>
               <div class="desc">Diamond Armour (Enchanted). Günstiger Einstieg für kleinere PvP-Käufe.</div>
               <div class="product-meta"><span>Item</span><span>Kit</span></div>
-              <div class="price">0,50€</div>
+              <div class="price"></div>
               <div class="controls">
                 <input class="qty" type="number" min="1" value="1" />
                 <button class="btn btn-primary add-btn">In Warenkorb</button>
@@ -912,7 +941,7 @@
               <h3>Crystal</h3>
               <div class="desc">Einzelkauf pro Stück. Direkt im Shop mit Menge auswählbar.</div>
               <div class="product-meta"><span>Item</span><span>pro Stück</span></div>
-              <div class="price">0,50€</div>
+              <div class="price"></div>
               <div class="controls">
                 <input class="qty" type="number" min="1" value="1" />
                 <button class="btn btn-primary add-btn">In Warenkorb</button>
@@ -924,7 +953,7 @@
               <h3>Mace</h3>
               <div class="desc">Preis pro Stück. Im Screenshot als unenchanted markiert.</div>
               <div class="product-meta"><span>Item</span><span>pro Stück</span></div>
-              <div class="price">0,75€</div>
+              <div class="price"></div>
               <div class="controls">
                 <input class="qty" type="number" min="1" value="1" />
                 <button class="btn btn-primary add-btn">In Warenkorb</button>
@@ -1119,8 +1148,7 @@
         <div class="field">
           <label>Kaufanleitung</label>
           <div class="info-card">
-            <div style="display:grid;gap:12px;line-height:1.7;">
-              <div id="checkoutInstructions" style="display:grid;gap:12px;line-height:1.7;">
+            <div id="checkoutInstructions" style="display:grid;gap:12px;line-height:1.7;">
               <div><strong>1.</strong> Sende zuerst den passenden Betrag mit deiner gewählten Zahlungsmethode.</div>
               <div><strong>2.</strong> Speichere danach einen klaren Screenshot oder Beweis der Zahlung.</div>
               <div><strong>3.</strong> Joine anschließend unseren Discord Server.</div>
@@ -1169,24 +1197,26 @@
     const closeModalBtn = document.getElementById('closeModalBtn');
     const cancelCheckoutBtn = document.getElementById('cancelCheckoutBtn');
     const checkoutSummary = document.getElementById('checkoutSummary');
-    const orderBox = document.getElementById('orderBox');
     const discordRedirectBtn = document.getElementById('discordRedirectBtn');
-    const offerBanner = document.getElementById('offerBanner');
-    const offerBannerTitle = document.getElementById('offerBannerTitle');
-    const offerBannerText = document.getElementById('offerBannerText');
+    
     const paymentMethodSelect = document.getElementById('paymentMethod');
     const checkoutInstructions = document.getElementById('checkoutInstructions');
 
+    function getDisplayPrice(basePrice) {
+      return Math.round(basePrice * 0.75 * 10) / 10;
+    }
+
     function addToCart(name, price, quantity = 1) {
-      const existing = cart.find(item => item.name === name && item.price === price);
+      const finalPrice = getDisplayPrice(price);
+      const existing = cart.find(item => item.name === name && item.price === finalPrice);
+
       if (existing) {
         existing.quantity += quantity;
       } else {
-        cart.push({ name, price, quantity });
+        cart.push({ name, price: finalPrice, quantity });
       }
+
       renderCart();
-    updateInstructions();
-    
     }
 
     function removeFromCart(index) {
@@ -1224,7 +1254,7 @@
       }
 
       const items = cart.reduce((sum, item) => sum + item.quantity, 0);
-      cartCountEl.textContent = `${items} ${items === 1 ? 'Artikel' : 'Artikel'}`;
+      cartCountEl.textContent = `${items} Artikel`;
 
       const { subtotal, total } = getTotals();
       subtotalEl.textContent = euro(subtotal);
@@ -1253,7 +1283,9 @@
         alert('Dein Warenkorb ist leer.');
         return;
       }
+
       updateCheckoutSummary();
+      updateInstructions();
       checkoutModal.classList.add('active');
       checkoutModal.setAttribute('aria-hidden', 'false');
     }
@@ -1262,6 +1294,25 @@
       checkoutModal.classList.remove('active');
       checkoutModal.setAttribute('aria-hidden', 'true');
     }
+
+    function applySaleUI() {
+      document.querySelectorAll('.product-card').forEach(card => {
+        const priceEl = card.querySelector('.price');
+        const basePrice = parseFloat(card.dataset.price);
+        const discounted = getDisplayPrice(basePrice);
+
+        priceEl.innerHTML = `<span class="old-price">${basePrice.toFixed(2).replace('.', ',')}€</span><span class="new-price">${discounted.toFixed(2).replace('.', ',')}€</span>`;
+
+        if (!card.querySelector('.sale-badge')) {
+          const badge = document.createElement('div');
+          badge.className = 'sale-badge';
+          badge.textContent = 'SALE -25%';
+          card.appendChild(badge);
+        }
+      });
+    }
+
+          
 
     function updateInstructions() {
       const method = paymentMethodSelect.value;
@@ -1320,7 +1371,6 @@
       `;
     }
 
-
     document.querySelectorAll('.add-btn').forEach(btn => {
       btn.addEventListener('click', event => {
         const card = event.currentTarget.closest('.product-card');
@@ -1328,31 +1378,31 @@
         const price = parseFloat(card.dataset.price);
         const qtyInput = card.querySelector('.qty');
         const quantity = Math.max(1, parseInt(qtyInput.value || '1', 10));
+
         addToCart(name, price, quantity);
         qtyInput.value = '1';
       });
     });
 
     checkoutBtn.addEventListener('click', openCheckout);
-    paymentMethodSelect.addEventListener('change', updateInstructions);
     clearCartBtn.addEventListener('click', clearCart);
+    paymentMethodSelect.addEventListener('change', updateInstructions);
     closeModalBtn.addEventListener('click', closeCheckout);
     cancelCheckoutBtn.addEventListener('click', closeCheckout);
-    
-    
-    discordRedirectBtn.addEventListener('click', () => {
-      closeCheckout();
+    discordRedirectBtn.addEventListener('click', () => closeCheckout());
+
+    checkoutModal.addEventListener('click', event => {
+      if (event.target === checkoutModal) closeCheckout();
     });
 
-    checkoutModal.addEventListener('click', e => {
-      if (e.target === checkoutModal) closeCheckout();
-    });
-
-    document.addEventListener('keydown', e => {
-      if (e.key === 'Escape') closeCheckout();
+    document.addEventListener('keydown', event => {
+      if (event.key === 'Escape') closeCheckout();
     });
 
     renderCart();
+    applySaleUI();
+    updateInstructions();
+    
 
     window.removeFromCart = removeFromCart;
   </script>
